@@ -1,0 +1,48 @@
+﻿@model IEnumerable<VideoStoreManager.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Customers</h1>
+        
+        @if (!Model.Any())
+        {
+            <p>We don't have any customers yet.</p>
+        }
+        else
+        {
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Customer</th>
+                        <th>Membership Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in Model)
+                    {
+                        <tr class="table-danger">
+                            <th scope="row">@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</th>
+                            <th>@customer.MembershipType.Name</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@model VideoStoreManager.Models.Customer
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>@Model.Name</h1>
+        <ul>
+            <li>Membership Type: @Model.MembershipType.Name</li>
+            @if(Model.BirthDate != null)
+            {
+                <li>Birth Date: @Model.BirthDate.Value.ToString("MM/dd/yyyy")</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
