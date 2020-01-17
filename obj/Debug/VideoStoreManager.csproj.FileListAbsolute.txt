@@ -102,3 +102,6 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoS
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.RecreateMoviesTable.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddColumnsToMovieTable.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.PopulateMoviesTable1.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.MembershipTypeNameRequired.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.RequiredFieldsInMovieAndCustomerClasses.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddedValidationForNumberInStock.resources

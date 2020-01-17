@@ -69,9 +69,13 @@ namespace VideoStoreManager.Controllers
 
         public ActionResult Edit(int id)
         {
-            var viewModel = new MovieFormViewModel
-            {
-                Movie = _context.Movies.SingleOrDefault(m => m.Id == id),
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            var viewModel = new MovieFormViewModel(movie)
+            { 
                 Genres = _context.Genres.ToList()
             };
 
@@ -79,10 +83,23 @@ namespace VideoStoreManager.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie)
+                {
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
+
+            //Adding New Movie
             if (movie.Id == 0)
                 _context.Movies.Add(movie);
+
+            //Editing Existing Movie
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);

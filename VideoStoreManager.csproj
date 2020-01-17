@@ -217,12 +217,26 @@
     <Compile Include="Migrations\202001160027076_PopulateMoviesTable1.designer.cs">
       <DependentUpon>202001160027076_PopulateMoviesTable1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001162353061_MembershipTypeNameRequired.cs" />
+    <Compile Include="Migrations\202001162353061_MembershipTypeNameRequired.designer.cs">
+      <DependentUpon>202001162353061_MembershipTypeNameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001170025555_RequiredFieldsInMovieAndCustomerClasses.cs" />
+    <Compile Include="Migrations\202001170025555_RequiredFieldsInMovieAndCustomerClasses.designer.cs">
+      <DependentUpon>202001170025555_RequiredFieldsInMovieAndCustomerClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001170034419_AddedValidationForNumberInStock.cs" />
+    <Compile Include="Migrations\202001170034419_AddedValidationForNumberInStock.designer.cs">
+      <DependentUpon>202001170034419_AddedValidationForNumberInStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\NumberInStockValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
@@ -352,6 +366,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001160027076_PopulateMoviesTable1.resx">
       <DependentUpon>202001160027076_PopulateMoviesTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001162353061_MembershipTypeNameRequired.resx">
+      <DependentUpon>202001162353061_MembershipTypeNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001170025555_RequiredFieldsInMovieAndCustomerClasses.resx">
+      <DependentUpon>202001170025555_RequiredFieldsInMovieAndCustomerClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001170034419_AddedValidationForNumberInStock.resx">
+      <DependentUpon>202001170034419_AddedValidationForNumberInStock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
