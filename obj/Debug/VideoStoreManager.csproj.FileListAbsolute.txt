@@ -105,3 +105,11 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoS
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.MembershipTypeNameRequired.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.RequiredFieldsInMovieAndCustomerClasses.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddedValidationForNumberInStock.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Net.Http.Formatting.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Web.Http.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Web.Http.WebHost.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Net.Http.Formatting.xml
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Web.Http.xml
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\System.Web.Http.WebHost.xml
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\AutoMapper.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\AutoMapper.xml
