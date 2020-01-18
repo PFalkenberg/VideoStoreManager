@@ -215,7 +215,7 @@
                 }
             });
 
-            $.extend(rules, { "__dummy__": true });
+            $.extend(rules, { "__VideoStoreManager__": true });
 
             if (!skipAttach) {
                 valInfo.attachValidation();
@@ -333,7 +333,7 @@
         });
     };
 
-    $jQval.addMethod("__dummy__", function (value, element, params) {
+    $jQval.addMethod("__VideoStoreManager__", function (value, element, params) {
         return true;
     });
 
