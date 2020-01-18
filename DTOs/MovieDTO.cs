@@ -15,6 +15,7 @@ namespace VideoStoreManager.DTOs
         [Required]
         public string Name { get; set; }
 
+        public GenreDTO Genre { get; set; }
 
         [Required]
         public int GenreId { get; set; }

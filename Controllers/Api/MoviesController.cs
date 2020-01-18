@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Net;
 using System.Net.Http;
 using System.Web;
@@ -20,9 +21,14 @@ namespace VideoStoreManager.Controllers.Api
             _context = new MyDBContext();
         }
 
-        public IEnumerable<MovieDTO> GetMovies()
+        public IHttpActionResult GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDTO>);
+            var movies = _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDTO>);
+
+            return Ok(movies);
         }
 
         public IHttpActionResult GetMovie(int id)
