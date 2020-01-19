@@ -94,10 +94,7 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoS
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddGenreReleaseDateNumberInStockToMovie.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddGenreModelClass.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.PopulateGenresTable.resources
-C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.PopulateMoviesTable.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.ChangeTriMonthlyToQuarterly1.resources
-C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddGenreIdToMovieClass.resources
-C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.RemoveGenreIdFromMovie.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddGenreIdToMovieClass1.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.RecreateMoviesTable.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddColumnsToMovieTable.resources
@@ -138,3 +135,9 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Microsoft.Ow
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddIndividualUserAuthentication.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.SeedUsers.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddDriversLicenseToApplicationUser.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddUserPhoneNumberToApplicationUser.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddPhoneToApplicationUser.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.SeedUsers1.resources

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using VideoStoreManager.Models;
 
@@ -151,7 +152,12 @@ namespace VideoStoreManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser 
+                { 
+                    UserName = model.Email, 
+                    Email = model.Email,
+                    Phone = model.PhoneNumber
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -367,7 +373,12 @@ namespace VideoStoreManager.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Phone = model.PhoneNumber
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

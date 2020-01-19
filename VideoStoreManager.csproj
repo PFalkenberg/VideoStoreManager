@@ -248,21 +248,9 @@
     <Compile Include="Migrations\202001150251219_PopulateGenresTable.designer.cs">
       <DependentUpon>202001150251219_PopulateGenresTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001150305426_PopulateMoviesTable.cs" />
-    <Compile Include="Migrations\202001150305426_PopulateMoviesTable.designer.cs">
-      <DependentUpon>202001150305426_PopulateMoviesTable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202001150332217_ChangeTriMonthlyToQuarterly1.cs" />
     <Compile Include="Migrations\202001150332217_ChangeTriMonthlyToQuarterly1.designer.cs">
       <DependentUpon>202001150332217_ChangeTriMonthlyToQuarterly1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001152313149_AddGenreIdToMovieClass.cs" />
-    <Compile Include="Migrations\202001152313149_AddGenreIdToMovieClass.designer.cs">
-      <DependentUpon>202001152313149_AddGenreIdToMovieClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001152319035_RemoveGenreIdFromMovie.cs" />
-    <Compile Include="Migrations\202001152319035_RemoveGenreIdFromMovie.designer.cs">
-      <DependentUpon>202001152319035_RemoveGenreIdFromMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202001152351132_AddGenreIdToMovieClass1.cs" />
     <Compile Include="Migrations\202001152351132_AddGenreIdToMovieClass1.designer.cs">
@@ -292,20 +280,45 @@
     <Compile Include="Migrations\202001170034419_AddedValidationForNumberInStock.designer.cs">
       <DependentUpon>202001170034419_AddedValidationForNumberInStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001182051043_AddIndividualUserAuthentication.cs" />
+    <Compile Include="Migrations\202001182051043_AddIndividualUserAuthentication.designer.cs">
+      <DependentUpon>202001182051043_AddIndividualUserAuthentication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001182122557_SeedUsers.cs" />
+    <Compile Include="Migrations\202001182122557_SeedUsers.designer.cs">
+      <DependentUpon>202001182122557_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001182147467_AddDriversLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202001182147467_AddDriversLicenseToApplicationUser.designer.cs">
+      <DependentUpon>202001182147467_AddDriversLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001182312196_AddUserPhoneNumberToApplicationUser.cs" />
+    <Compile Include="Migrations\202001182312196_AddUserPhoneNumberToApplicationUser.designer.cs">
+      <DependentUpon>202001182312196_AddUserPhoneNumberToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001182341392_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202001182341392_AddPhoneToApplicationUser.designer.cs">
+      <DependentUpon>202001182341392_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001182351474_SeedUsers1.cs" />
+    <Compile Include="Migrations\202001182351474_SeedUsers1.designer.cs">
+      <DependentUpon>202001182351474_SeedUsers1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\NumberInStockValidation.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
-    <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
@@ -522,7 +535,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
@@ -547,6 +560,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -604,17 +618,8 @@
     <EmbeddedResource Include="Migrations\202001150251219_PopulateGenresTable.resx">
       <DependentUpon>202001150251219_PopulateGenresTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001150305426_PopulateMoviesTable.resx">
-      <DependentUpon>202001150305426_PopulateMoviesTable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001150332217_ChangeTriMonthlyToQuarterly1.resx">
       <DependentUpon>202001150332217_ChangeTriMonthlyToQuarterly1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001152313149_AddGenreIdToMovieClass.resx">
-      <DependentUpon>202001152313149_AddGenreIdToMovieClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001152319035_RemoveGenreIdFromMovie.resx">
-      <DependentUpon>202001152319035_RemoveGenreIdFromMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001152351132_AddGenreIdToMovieClass1.resx">
       <DependentUpon>202001152351132_AddGenreIdToMovieClass1.cs</DependentUpon>
@@ -636,6 +641,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001170034419_AddedValidationForNumberInStock.resx">
       <DependentUpon>202001170034419_AddedValidationForNumberInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182051043_AddIndividualUserAuthentication.resx">
+      <DependentUpon>202001182051043_AddIndividualUserAuthentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182122557_SeedUsers.resx">
+      <DependentUpon>202001182122557_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182147467_AddDriversLicenseToApplicationUser.resx">
+      <DependentUpon>202001182147467_AddDriversLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182312196_AddUserPhoneNumberToApplicationUser.resx">
+      <DependentUpon>202001182312196_AddUserPhoneNumberToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182341392_AddPhoneToApplicationUser.resx">
+      <DependentUpon>202001182341392_AddPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001182351474_SeedUsers1.resx">
+      <DependentUpon>202001182351474_SeedUsers1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
