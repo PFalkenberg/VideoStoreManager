@@ -141,3 +141,11 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoS
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddUserPhoneNumberToApplicationUser.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddPhoneToApplicationUser.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.SeedUsers1.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.Ado.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.AspNet.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.Core.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.EF6.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.Mvc5.dll
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddRentalAssociationClass.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddNumberAvailableToMovieClass.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.InitializeNumberAvailableColumn.resources

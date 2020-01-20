@@ -27,7 +27,9 @@ namespace VideoStoreManager.Models
         [Required]
         [NumberInStockValidation]
         [Display(Name = "Number in Stock")]
-        public int NumberInStock { get; set; }
+        public int NumberInStock { get; set; } // Total number of copies stores owns
+
+        public int NumberAvailable { get; set; } //Number of copies store has available for rent (NumberInStock - # of copies already rented)
 
         public static readonly byte MinStock = 1;
         public static readonly byte MaxStock = 20;
