@@ -21,8 +21,6 @@ namespace VideoStoreManager.Controllers.Api
         [HttpPost]
         public IHttpActionResult NewRental(NewRentalDTO rental)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
 
             if (rental.MovieIds.Count == 0)
                 return BadRequest("No Movie Ids have been given.");
