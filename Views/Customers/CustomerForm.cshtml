@@ -4,38 +4,106 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
+<h2>@Model.Title</h2>
 
 @using (Html.BeginForm("Save", "Customers"))
 {
     @Html.ValidationSummary()
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="form-group">
         <label for="MembershipTypeId">Membership Type</label>
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MembershipTypeId)
     </div>
     <div class="form-group">
         <label for="BirthDate">Date of Birth</label>
-        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
+        @Html.TextBoxFor(m => m.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BirthDate)
     </div>
     <div class="checkbox">
         <label>
-            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribed to Newsletter?
+            @Html.CheckBoxFor(m => m.IsSubscribedToNewsletter) Subscribed to Newsletter?
         </label>
     </div>
-    @Html.HiddenFor(m => m.Customer.Id)
-    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+
+    <h3>Active Rentals</h3>
+    <table id="rentals" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Movie</th>
+                <th>Date Rented</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+
 }
 
-@section scripts 
+@section scripts
     {
-        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryval");
+ 
+
+
+        <script>
+            $(document).ready(function () {
+                var table = $("#rentals").DataTable({
+                    ajax: {
+                        url: "/api/newRental?customerId=@Model.Id",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "movie.name"
+                        },
+                        {
+                            data: "dateRented",
+                            render: function (data) {
+                                var date = new Date(data);
+                                date = date.toDateString();
+                                return date;
+                            }
+                        },
+                        {
+                            data: "id",
+                            render: function (data) {
+                                return "<button class='btn-link js-put' data-rental-id=" + data + ">Return Rental</button>";
+                            }
+                        }
+                    ]
+                });
+
+                $("#rentals").on("click", ".js-put", function (e) {
+                    e.preventDefault();
+                    var button = $(this);
+
+                    bootbox.confirm("Return this movie rental?", function (result) {
+                        if (result) {
+                             $.ajax({
+                                url: "/api/newRental/" + button.attr("data-rental-id"),
+                                method: "PUT",
+                                success: function () {
+                                    table.row(button.parents("tr")).remove().draw();
+                                    toastr.success("Movie rental successfully returned!");
+                                }
+                            });
+                        }
+
+                    });
+                });
+            });
+        </script>
     }
+
+
 

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using VideoStoreManager.Models;
 using VideoStoreManager.DTOs;
+using System.Data.Entity;
 
 namespace VideoStoreManager.Controllers.Api
 {
@@ -16,6 +17,38 @@ namespace VideoStoreManager.Controllers.Api
         public NewRentalController()
         {
             _context = new MyDBContext();
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAllRentals()
+        {
+            var Rentals = _context.Rentals.ToList();
+            return Ok(Rentals);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetRental(int id)
+        {
+            var rental = _context.Rentals.SingleOrDefault(r => r.Id == id);
+            if (rental == null)
+                return NotFound();
+
+            return Ok(rental);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetCustomerRentals(int customerId) //Gets all active rentals for a specific customer
+        {
+            var Rentals = _context.Rentals
+                .Include(r => r.Movie)
+                .Where(r => r.Customer.Id == customerId)
+                .Where(r => r.DateReturned == null)
+                .ToList();
+
+            if (Rentals == null)
+                return NotFound();
+
+            return Ok(Rentals);
         }
 
         [HttpPost]
@@ -50,6 +83,27 @@ namespace VideoStoreManager.Controllers.Api
             }
             _context.SaveChanges();
             return Ok();
+        }
+
+        [HttpPut]
+        public void ReturnRental(int id)
+        {
+            var rentalInDb = _context.Rentals
+                .Include(r => r.Movie)
+                .SingleOrDefault(r => r.Id == id);
+
+            if(rentalInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            rentalInDb.DateReturned = DateTime.Now;
+
+            var movieId = rentalInDb.Movie.Id;
+            var movieInDb = _context.Movies.SingleOrDefault(m => m.Id == movieId);
+            
+            if(movieInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            movieInDb.NumberAvailable++;
+            _context.SaveChanges();
         }
     }
 }
