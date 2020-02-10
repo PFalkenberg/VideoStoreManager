@@ -149,3 +149,4 @@ C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\bin\Glimpse.Mvc5
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddRentalAssociationClass.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddNumberAvailableToMovieClass.resources
 C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.InitializeNumberAvailableColumn.resources
+C:\Users\black\source\repos\VideoStoreManager\VideoStoreManager\obj\Debug\VideoStoreManager.Migrations.AddRentalLimit.resources

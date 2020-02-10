@@ -90,6 +90,10 @@
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
 
+            $.validator.addMethod("maxRentals", function () {
+                return customer.activeRentals + vm.movieIds.length < 4;
+            }, "Customer cannot rent more than 3 movies at a time.");
+
             var validator = $("#newRental").validate({
                 rules: {
                     customer: { validCustomer: true },
@@ -111,8 +115,8 @@
                        vm = { movieIds: [] };
                        validator.resetForm();
                     })
-                    .fail(function () {
-                        toastr.error("Something unexpected happened.")
+                        .fail(function (jqXHR, status, err) {
+                            toastr.error(JSON.stringify(jqXHR.responseJSON.message), "Error");
                     });
                 }
             });

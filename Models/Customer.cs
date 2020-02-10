@@ -25,5 +25,9 @@ namespace VideoStoreManager.Models
 
         [Min18YearsIfMember]
         public DateTime? BirthDate { get; set; }
+
+        public int ActiveRentals { get; set; }
+
+        public static readonly byte RentalLimit = 3;
     }
 }

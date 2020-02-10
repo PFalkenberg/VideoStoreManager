@@ -67,12 +67,16 @@ namespace VideoStoreManager.Controllers.Api
             if (movies.Count != rental.MovieIds.Count)
                 return BadRequest("One or more MovieIds are invalid.");
 
+            if (customer.ActiveRentals + movies.Count > Customer.RentalLimit)
+                return BadRequest("Customer cannot rent more than 3 movies at a time.");
+
             foreach (var movie in movies)
             {
                 if (movie.NumberAvailable == 0)
                     return BadRequest("Movie is not available.");
 
                 movie.NumberAvailable--;
+                customer.ActiveRentals++;
                 var newRental = new Rental
                 {
                     Customer = customer,

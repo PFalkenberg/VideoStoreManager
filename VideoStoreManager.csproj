@@ -335,6 +335,10 @@
     <Compile Include="Migrations\202001192134326_InitializeNumberAvailableColumn.designer.cs">
       <DependentUpon>202001192134326_InitializeNumberAvailableColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002101935209_AddRentalLimit.cs" />
+    <Compile Include="Migrations\202002101935209_AddRentalLimit.designer.cs">
+      <DependentUpon>202002101935209_AddRentalLimit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -714,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001192134326_InitializeNumberAvailableColumn.resx">
       <DependentUpon>202001192134326_InitializeNumberAvailableColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002101935209_AddRentalLimit.resx">
+      <DependentUpon>202002101935209_AddRentalLimit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
