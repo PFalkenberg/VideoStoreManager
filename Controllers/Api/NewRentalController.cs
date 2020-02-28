@@ -94,6 +94,7 @@ namespace VideoStoreManager.Controllers.Api
         {
             var rentalInDb = _context.Rentals
                 .Include(r => r.Movie)
+                .Include(r => r.Customer)
                 .SingleOrDefault(r => r.Id == id);
 
             if(rentalInDb == null)
@@ -107,6 +108,12 @@ namespace VideoStoreManager.Controllers.Api
             if(movieInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             movieInDb.NumberAvailable++;
+
+            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == rentalInDb.Customer.Id);
+
+            if (customerInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            customerInDb.ActiveRentals--;
             _context.SaveChanges();
         }
     }

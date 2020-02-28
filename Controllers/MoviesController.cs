@@ -101,7 +101,11 @@ namespace VideoStoreManager.Controllers
 
             //Adding New Movie
             if (movie.Id == 0)
+            {
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
+            }
+                
 
             //Editing Existing Movie
             else

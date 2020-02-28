@@ -55,6 +55,7 @@ namespace VideoStoreManager.Controllers.Api
                 return BadRequest();
 
             var movie = Mapper.Map<MovieDTO, Movie>(movieDTO);
+            movie.NumberAvailable = movie.NumberInStock;
             _context.Movies.Add(movie);
             _context.SaveChanges();
 
